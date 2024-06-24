@@ -6,15 +6,8 @@ from matplotlib.pyplot import cm
 def dict_for_simulations():
 
     print('Hei')
-    scen_list_out = {'OutputAnalyse01':'Skeie18, AR5 prior',
-                     'OutputAnalyse02':'Update obs. end year 2014',
-                     'OutputAnalyse03':'Replace AR5 prior with AR6',
-                     'OutputAnalyse04':'End year 2019',
-                     'OutputAnalyse19NewPrior_W_cpi_2':'Base',
-                     'Space0':'',
-                     'Space6':'Extend to 2022',
-                     'OutputAnalyse28':'Replace AR6 prior with AR6 extended',
-                     'OutputAnalyse29':'Update obs. end year 2019',
+    scen_list_out = {'OutputAnalyse01':'Skeie18 (end year 2014)',
+                     'OutputAnalyse19NewPrior_W_cpi_2':'Base (end year 2019)',
                      'OutputAnalyse30':'Base extended (end year 2022)',
                      'Space7':'',
                      'Space1':'Sensitivity test:',
@@ -79,8 +72,7 @@ def dict_for_simulations():
                       'OutputAnalyse33LinredSmoothbase1950to2000Flat':colorlist[4],
                       'OutputAnalyse28':colorlist[5],
                       'OutputAnalyse29':colorlist[5],
-                      'OutputAnalyse30':colorlist[5],
-                      'OutputAnalyse34':colorlist[6],
-                      'OutputAnalyse34withFewerSeries':colorlist[6]}
+                      'OutputAnalyse30':colorlist[0],
+                      'OutputAnalyse34':colorlist[6]}
 
     return scen_list_out, scen_colorlist

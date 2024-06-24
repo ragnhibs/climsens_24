@@ -125,8 +125,9 @@ def plot_summary():
             summary_erf_prior.name = textline
             summary_all_prior = pd.concat([summary_all_prior,summary_erf_prior],axis=1)
             
-        if scen == 'OutputAnalyse04':
-            summary_erf_prior = pd.read_csv('results_csv/summary_prior_rf_'+scen+str(scen_end_yr[scen])+ '_allcomp.csv',index_col=0)
+        if scen == 'OutputAnalyse19NewPrior_W_cpi_2':
+            scen_prior = 'OutputAnalyse04'
+            summary_erf_prior = pd.read_csv('results_csv/summary_prior_rf_'+scen_prior+str(scen_end_yr[scen])+ '_allcomp.csv',index_col=0)
             
             summary_erf_prior = summary_erf_prior.loc[rf_comp]
             ax.plot(summary_erf_prior['mean'],antscen-sc+0.50,'s',markersize=3,
@@ -272,7 +273,7 @@ scen_end_yr = {'OutputAnalyse01':2014,
 scen_list_out,scen_colorlist =  dict_for_simulations()
 antscen = len(scen_list_out)
 
-rf_comp = 'antro' #aero' #antro' #'aero' #antro' #'aero' #antro' #'Tot' #'antro' #'aero' #'antro' #'aero'
+rf_comp = 'antro' #'antro' #aero' #antro' #'aero' #antro' #'aero' #antro' #'Tot' #'antro' #'aero' #'antro' #'aero'
 
 rf_list_long = {'Tot':'Total ERF',
                 'antro':'Anthropogenic ERF',

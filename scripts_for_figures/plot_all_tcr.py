@@ -13,7 +13,7 @@ scen_list_out,scen_colorlist =  dict_for_simulations()
 antscen = len(scen_list_out)
 
 
-fig, axs = plt.subplots(nrows=1,ncols=1,figsize=(5,3))
+fig, axs = plt.subplots(nrows=1,ncols=1,figsize=(6,3))
 
 
 for sc,scen in enumerate(scen_list_out):
@@ -69,8 +69,8 @@ print(summary_all)
 
 
 print('Tekst to manuscript')
-print('mean Base ' + '{:.1f}'.format(summary_all['Mean'].loc['Base']))
-print('90th range Base: '+ '{:.1f}'.format(summary_all['5perc'].loc['Base']) +' to ' + '{:.1f}'.format(summary_all['95perc'].loc['Base']))
+print('mean Base ' + '{:.1f}'.format(summary_all['Mean'].loc['Base (end year 2019)']))
+print('90th range Base: '+ '{:.1f}'.format(summary_all['5perc'].loc['Base (end year 2019)']) +' to ' + '{:.1f}'.format(summary_all['95perc'].loc['Base (end year 2019)']))
 
 
 print('Tekst to manuscript')

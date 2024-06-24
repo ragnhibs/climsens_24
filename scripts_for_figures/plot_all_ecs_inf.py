@@ -71,10 +71,10 @@ print(summary_all)
 
 
 print('Tekst to manuscript')
-print('mean Base ' + '{:.1f}'.format(summary_all['Mean'].loc['Base']))
-print('90th range Base: '+ '{:.1f}'.format(summary_all['5perc'].loc['Base']) +' to ' + '{:.1f}'.format(summary_all['95perc'].loc['Base']))
+print('mean Base ' + '{:.1f}'.format(summary_all['Mean'].loc['Base (end year 2019)']))
+print('90th range Base: '+ '{:.1f}'.format(summary_all['5perc'].loc['Base (end year 2019)']) +' to ' + '{:.1f}'.format(summary_all['95perc'].loc['Base (end year 2019)']))
 
-temp = summary_all['Mean'].loc['Base'] - summary_all['Mean'].loc['Skeie18, AR5 prior']
+temp = summary_all['Mean'].loc['Base (end year 2019)'] - summary_all['Mean'].loc['Skeie18 (end year 2014)']
 print('diff Base and Skeie et al 2018: '  + '{:.1f}'.format(temp))
 
 """

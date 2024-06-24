@@ -38,6 +38,7 @@ def plot_summary():
 
 #Results to be plotted in b)        
 scen_list_out = {'OutputAnalyse19NewPrior_W_cpi_2':'Base',
+                 'OutputAnalyse30':'Base extended (end year 2022)',
                  'Space0':'',
                  'Space1':'Sensitivity test:',
                  'OutputNewAnalyse05Smooth':'Smooth',
@@ -52,12 +53,10 @@ scen_list_out = {'OutputAnalyse19NewPrior_W_cpi_2':'Base',
                  'OutputAnalyse27LinredSmoothbase1950to2019':'Linred1950to2019',
                  'Space4':'',
                  'OutputAnalyse33LinredSmoothbase1950to2000Flat':'Linred1950to2000 then flat',
-                 'Space5':'',
-                 'Space6':'Extend to 2022:',
-                 'OutputAnalyse30':'Base extended (end year 2022)',
                  'Space7':'',
                  'Space8':'ERFaci trend test',
-                 'OutputAnalyse34':'Unc. in 1950 and 2014 independent'}
+                 'OutputAnalyse34':'Unc. in 1950 and 2014 independent',
+                 'Space9':'',}
 
 
 #Results to be plotted in c)
@@ -285,7 +284,7 @@ ax.set_ylabel('Earth Energy Imbalance [W m$^{-2}$]')
 
 axes["right"].set_xlabel('Earth Energy Imbalance trend [(W m$^{-2}$) dec$^{-1}$]')
 
-axes["top left"].set_title('a)',loc='left')
+axes["top left"].set_title('a) Earth Energy Imbalance',loc='left')
 axes["right"].set_title('b) Forced Earth Energy Imbalance trend 2005-2019 ',loc='left')
 axes["bottom left"].set_title('c) Forced Earth Energy Imbalance',loc='left')
 
