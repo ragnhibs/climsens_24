@@ -229,6 +229,8 @@ b, a = np.polyfit(x.values, y.values, deg=1)
 xseq = x.values
 ax.plot(xseq, a + b * xseq, color="blue",linestyle= '-.',lw=0.5)# ,label = str(b*10.0))
 #ax.text(2022.5, a + b * 2022, '{:2.2f}'.format(b*10.0)+' Wm$^{-2}$ dec$^{-1}$', color="blue",fontsize=10)
+print('Trend in CERES:')
+print('{:2.2f}'.format(b*10.0)+' Wm$^{-2}$ dec$^{-1}$')
 
 print('Increase in EEI') 
 print(ceres_df['net'].loc[2000:2009].mean())

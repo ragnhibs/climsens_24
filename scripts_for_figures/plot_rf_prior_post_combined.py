@@ -8,7 +8,8 @@ from dict_for_simulations import dict_for_simulations
 plt.rcParams['font.size'] = 4
 plt.rcParams['figure.dpi'] = 300
 
-
+plt.rc('xtick', labelsize=6)
+plt.rc('ytick', labelsize=6)    # fontsize of the tick labels
 
 def plot_pdf_posterior():
     for sc,scen in enumerate(scen_list):
@@ -273,7 +274,7 @@ scen_end_yr = {'OutputAnalyse01':2014,
 scen_list_out,scen_colorlist =  dict_for_simulations()
 antscen = len(scen_list_out)
 
-rf_comp = 'antro' #'antro' #aero' #antro' #'aero' #antro' #'aero' #antro' #'Tot' #'antro' #'aero' #'antro' #'aero'
+rf_comp = 'aero'#antro' #'antro' #aero' #antro' #'aero' #antro' #'aero' #antro' #'Tot' #'antro' #'aero' #'antro' #'aero'
 
 rf_list_long = {'Tot':'Total ERF',
                 'antro':'Anthropogenic ERF',
@@ -379,17 +380,17 @@ ax.set_yticks([])
 ax.legend(frameon=False,loc='upper right')
 
 #plt.suptitle(rf_list_long[rf_comp])
-axes["top left"].set_xlabel('ERF [W m$^{-2}$]')
-axes["top left"].set_ylabel('Probability density')
-axes["bottom left"].set_ylabel('ERF [W m$^{-2}$]')
-axes["bottom left"].set_xlabel('Year')
-axes["right"].set_xlabel('ERF [W m$^{-2}$]')
+axes["top left"].set_xlabel('ERF [W m$^{-2}$]',fontsize=6)
+axes["top left"].set_ylabel('Probability density',fontsize=6)
+axes["bottom left"].set_ylabel('ERF [W m$^{-2}$]',fontsize=6 )
+axes["bottom left"].set_xlabel('Year',fontsize=6 )
+axes["right"].set_xlabel('ERF [W m$^{-2}$]',fontsize=6 )
 
 
 
-axes["top left"].set_title('a) '+ rf_list_long[rf_comp] + ' in 2014' ,loc='left')
-axes["right"].set_title('b) '+ rf_list_long[rf_comp] + ' at end year',loc='left')
-axes["bottom left"].set_title('c) '+ rf_list_long[rf_comp] + ' time evolution',loc='left')
+axes["top left"].set_title('a) '+ rf_list_long[rf_comp] + ' in 2014' ,loc='left',fontsize=6)
+axes["right"].set_title('b) '+ rf_list_long[rf_comp] + ' at end year',loc='left',fontsize=6)
+axes["bottom left"].set_title('c) '+ rf_list_long[rf_comp] + ' time evolution',loc='left',fontsize=6)
 
 
 
