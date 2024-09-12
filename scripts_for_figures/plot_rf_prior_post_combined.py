@@ -274,7 +274,7 @@ scen_end_yr = {'OutputAnalyse01':2014,
 scen_list_out,scen_colorlist =  dict_for_simulations()
 antscen = len(scen_list_out)
 
-rf_comp = 'aero'#antro' #'antro' #aero' #antro' #'aero' #antro' #'aero' #antro' #'Tot' #'antro' #'aero' #'antro' #'aero'
+rf_comp = 'antro' #'aero'#antro' #'antro' #aero' #antro' #'aero' #antro' #'aero' #antro' #'Tot' #'antro' #'aero' #'antro' #'aero'
 
 rf_list_long = {'Tot':'Total ERF',
                 'antro':'Anthropogenic ERF',
@@ -329,7 +329,7 @@ fig, axes = plt.subplot_mosaic(
 
 ax = axes["bottom left"]
 scen_list = ['OutputAnalyse01','OutputAnalyse19NewPrior_W_cpi_2']
-colorlist = ['C2','black']
+colorlist = ['forestgreen','black']
 #colorlist = [scen_colorlist[scen_list[0]],scen_colorlist[scen_list[1]]]
 plot_results_timeseries_posteriori()
 
@@ -341,7 +341,7 @@ plot_pdf_posterior()
 
 ax = axes["bottom left"]
 scen_list = ['OutputAnalyse01','OutputAnalyse04']
-colorlist = ['C2','black'] #['darkgray','black']
+colorlist = ['forestgreen','black'] #['darkgray','black']
 plot_results_timeseries_prior()
 
 
@@ -384,6 +384,8 @@ axes["top left"].set_xlabel('ERF [W m$^{-2}$]',fontsize=6)
 axes["top left"].set_ylabel('Probability density',fontsize=6)
 axes["bottom left"].set_ylabel('ERF [W m$^{-2}$]',fontsize=6 )
 axes["bottom left"].set_xlabel('Year',fontsize=6 )
+axes["bottom left"].set_xlim([1850,2025])
+
 axes["right"].set_xlabel('ERF [W m$^{-2}$]',fontsize=6 )
 
 
