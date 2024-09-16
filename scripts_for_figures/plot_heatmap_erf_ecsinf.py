@@ -39,9 +39,16 @@ def plot_heatmap():
     yval = post_erf.values #post_rf_glob.values.T
     xval = post_ecs.values #.T
     
+    print(xval.min())
+    print(xval.max())
+    print(yval.max())
+    print(yval.min())
 
+    
+    range_use = [[0.4, 9], [-1.9, 0.65]]
+    
     # Construct 2D histogram from data using the 'plasma' colormap
-    h=ax.hist2d(xval, yval, bins=N_bins, cmap='plasma',cmin=1,vmax=400)
+    h=ax.hist2d(xval, yval, bins=N_bins, range=range_use, cmap='plasma', cmin=1,vmax=450)
 
     # Plot a colorbar with label.
     cb = plt.colorbar(h[3],ax=ax)
@@ -77,15 +84,19 @@ scen_list_out,scen_colorlist =  dict_for_simulations()
 fig, axs = plt.subplots(nrows=1, ncols=2, figsize=(9/1.5,4/1.75)) 
 
 year_end = 2022
-letter = 'a) '
-ax=axs[0]
-scen = 'OutputAnalyse30'
-plot_heatmap()
+
 
 letter = 'b) '
 ax=axs[1]
 scen = 'OutputAnalyse34'
 plot_heatmap()
+
+letter = 'a) '
+ax=axs[0]
+scen = 'OutputAnalyse30'
+plot_heatmap()
+
+
 
 plt.tight_layout()
 plt.savefig('Figures/erf_ecs_distr.png')
