@@ -12,18 +12,29 @@ def plot_heatmap():
 
     
     #Read data climate sensitivity:
-    path_ecs = '/div/qbo/utrics/ClimateSensitivity/updateAR6/scripts_other/ECS_useCO2ERF/results_csv/'
-    filename = 'post_ecs_inf_'+scen+'.csv'
-    post_ecs = pd.read_csv(path_ecs+filename,index_col=0)
+    #path_ecs = '/div/qbo/utrics/ClimateSensitivity/updateAR6/scripts_other/ECS_useCO2ERF/results_csv/'
+    #filename = 'post_ecs_inf_'+scen+'.csv'
+    #post_ecs = pd.read_csv(path_ecs+filename,index_col=0)
+    #post_ecs = post_ecs['0']
+    #print(post_ecs)
+
+    #post_ecs.to_csv('results_csv/posteriori_ecs_inf_'+scen+'.csv')
+    post_ecs = pd.read_csv('results_csv/posteriori_ecs_inf_'+scen+'.csv',index_col=0)
     post_ecs = post_ecs['0']
     print(post_ecs)
-
+    
+    
     #Read data on ERF in end year.
-    path_erf = '/div/qbo/utrics/ClimateSensitivity/updateAR6/scripts_other/ERFtrend/results_csv/'
-    filename = 'rf_posterior_timeseriesaero'+scen+'.csv'
-    post_erf = pd.read_csv(path_erf+filename,index_col=0)
-    post_erf = post_erf.loc[year_end]
+    #path_erf = '/div/qbo/utrics/ClimateSensitivity/updateAR6/scripts_other/ERFtrend/results_csv/'
+    #filename = 'rf_posterior_timeseriesaero'+scen+'.csv'
+    #post_erf = pd.read_csv(path_erf+filename,index_col=0)
+    #post_erf = post_erf.loc[year_end]
+    #print(post_erf)
+    #post_erf.to_csv('results_csv/posteriori_erf_'+scen+'.csv')
+    post_erf = pd.read_csv('results_csv/posteriori_erf_'+scen+'.csv',index_col=0)
+    post_erf = post_erf[str(year_end)]
     print(post_erf)
+
     
     
     
@@ -69,8 +80,8 @@ def plot_heatmap():
     rf_ar6_perc95 = pd.read_csv(path+filename,index_col=0)
     
     
-    ax.axhline(rf_ar6_perc05['aerosol'].loc[year_end+0.5],linestyle='--',color='gray')
-    ax.axhline(rf_ar6_perc95['aerosol'].loc[year_end+0.5],linestyle='--',color='gray')
+    ax.axhline(rf_ar6_perc05['aerosol'].loc[year_end+0.5],linewidth=1,linestyle='--',color='gray')
+    ax.axhline(rf_ar6_perc95['aerosol'].loc[year_end+0.5],linewidth=1,linestyle='--',color='gray')
     
     ax.set_xlim([0,7])
     ax.set_ylim([-2.5,1])
